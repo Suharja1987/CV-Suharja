@@ -1,0 +1,210 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #f7f8fc, #e2e6f2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Kontainer utama */
+.container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar */
+.sidebar {
+    background: linear-gradient(135deg, #3a3e98, #667eea);
+    color: #ffffff;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+}
+
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.1);
+}
+
+.sidebar h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.job-title {
+    font-size: 1em;
+    font-style: italic;
+    color: #d1d8e0;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9em;
+    color: #d1d8e0;
+}
+
+.contact-info li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #d1d8e0;
+    transition: color 0.3s ease;
+}
+
+.contact-info li:hover i {
+    color: #ffffff;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav a {
+    display: block;
+    margin: 15px 0;
+    font-size: 1em;
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease, background 0.3s ease;
+    padding: 8px 0;
+}
+
+.sidebar-nav a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Konten Utama */
+main {
+    padding: 40px;
+    width: 100%;
+    background-color: #f9faff;
+    animation: fadeIn 1s ease;
+}
+
+main h2 {
+    color: #3a3e98;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e4f1;
+    padding-bottom: 5px;
+}
+
+section {
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.job, .project {
+    margin-bottom: 20px;
+}
+
+.job h3, .project h3 {
+    color: #344e72;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.job span, .project span {
+    font-size: 0.9em;
+    color: #7f8fa6;
+}
+
+.job p, .project p {
+    font-size: 1em;
+    color: #4b6584;
+    line-height: 1.6;
+}
+
+/* Skill Bar */
+.skill-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.skill-bar p {
+    flex: 1;
+    color: #344e72;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.skill-level {
+    width: 0;
+    height: 8px;
+    background: linear-gradient(135deg, #667eea, #3a3e98);
+    border-radius: 5px;
+    position: absolute;
+    left: 100px;
+    transition: width 1.5s ease;
+}
+
+.skill-bar:hover .skill-level {
+    width: 100%;
+}
+
+.skill-bar:nth-child(1) .skill-level { width: 90%; }
+.skill-bar:nth-child(2) .skill-level { width: 85%; }
+.skill-bar:nth-child(3) .skill-level { width: 80%; }
+.skill-bar:nth-child(4) .skill-level { width: 75%; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    main {
+        padding: 30px;
+    }
+}
